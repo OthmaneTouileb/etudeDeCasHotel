@@ -1,0 +1,13 @@
+# Exemple de fichier docker-compose.override.yml
+# Copiez ce fichier vers docker-compose.override.yml pour personnaliser votre configuration locale
+# Ce fichier sera automatiquement utilisé par docker-compose
+
+version: '3.8'
+
+services:
+  hotel-api:
+    environment:
+      # Personnalisez les variables d'environnement ici
+      SPRING_PROFILES_ACTIVE: dev
+      LOGGING_LEVEL_COM_HOTEL: DEBUG
+

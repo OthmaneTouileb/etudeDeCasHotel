@@ -1,0 +1,40 @@
+### GraphQL - Liste des réservations
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "query { reservations { id dateDebut dateFin client { nom prenom } } }"
+}
+
+### GraphQL - Consulter une réservation
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "query { reservation(id: 1) { id dateDebut dateFin preferences client { nom prenom email } chambre { type prix } } }"
+}
+
+### GraphQL - Créer une réservation
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { createReservation(input: { client: { nom: \"Dupont\" prenom: \"Jean\" email: \"jean.dupont@example.com\" telephone: \"0123456789\" } chambre: { id: 1 } dateDebut: \"2024-06-01\" dateFin: \"2024-06-05\" preferences: \"Vue sur mer\" }) { id dateDebut dateFin } }"
+}
+
+### GraphQL - Modifier une réservation
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { updateReservation(id: 1, input: { dateDebut: \"2024-06-02\" dateFin: \"2024-06-06\" }) { id dateDebut dateFin } }"
+}
+
+### GraphQL - Supprimer une réservation
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { deleteReservation(id: 1) }"
+}
+

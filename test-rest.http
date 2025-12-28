@@ -1,0 +1,38 @@
+### REST API - Créer une réservation
+POST http://localhost:8080/api/rest/reservations
+Content-Type: application/json
+
+{
+  "client": {
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "email": "jean.dupont@example.com",
+    "telephone": "0123456789"
+  },
+  "chambre": {
+    "id": 1
+  },
+  "dateDebut": "2024-06-01",
+  "dateFin": "2024-06-05",
+  "preferences": "Vue sur mer, lit king-size"
+}
+
+### REST API - Consulter une réservation
+GET http://localhost:8080/api/rest/reservations/1
+
+### REST API - Lister toutes les réservations
+GET http://localhost:8080/api/rest/reservations
+
+### REST API - Modifier une réservation
+PUT http://localhost:8080/api/rest/reservations/1
+Content-Type: application/json
+
+{
+  "dateDebut": "2024-06-02",
+  "dateFin": "2024-06-06",
+  "preferences": "Vue sur mer, lit king-size, petit-déjeuner inclus"
+}
+
+### REST API - Supprimer une réservation
+DELETE http://localhost:8080/api/rest/reservations/1
+
